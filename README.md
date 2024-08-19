@@ -1,9 +1,28 @@
-# Property Management Django Application
+# Django-Scrapy-data Application
 
 ## Project Overview
 
 This project is a Django application designed to store and manage property information using the Django admin interface. The application includes models to represent properties, locations, amenities, and images, with proper relationships between them. The admin interface provides full CRUD (Create, Read, Update, Delete) capabilities, ensuring that users can manage property data effectively. Additionally, a Django CLI application is provided to migrate data from a Scrapy project database to the Django application.
+## Table of Contents
 
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Task Breakdown](#task-breakdown)
+  - [1. Create Django Models and Migrations](#1-create-django-models-and-migrations)
+  - [2. Use Django Admin with Proper Authentication](#2-use-django-admin-with-proper-authentication)
+  - [3. Write Django CLI Application](#3-write-django-cli-application)
+- [Installation Guide](#installation-guide)
+  - [1. Set Up the Environment](#1-set-up-the-environment)
+  - [2. Clone the Repository](#2-clone-the-repository)
+  - [3. Create a Virtual Environment](#3-create-a-virtual-environment)
+  - [4. Install Dependencies](#4-install-dependencies)
+  - [5. Configure PostgreSQL](#5-configure-postgresql)
+  - [6. Apply Migrations](#6-apply-migrations)
+  - [7. Create a Superuser](#7-create-a-superuser)
+  - [8. Run the Development Server](#8-run-the-development-server)
+  - [9. Migrate Data from Scrapy](#9-migrate-data-from-scrapy)
+- [Usage](#usage)
+  
 ## Features
 
 - **Django Models**: Custom models for properties, locations, amenities, and images.
@@ -67,12 +86,16 @@ Ensure you have Python and PostgreSQL installed on your machine.
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/property-management-django.git
-cd property-management-django
+git clone https://github.com/samayunPathan/django-assignment-v2.git
+```
+``` bash
+cd django-assignment-v2
 ```
 ### 3. Create a Virtual Environment
 ```bash
 python -m venv venv
+```
+```bash
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
 ### 4. Install Dependencies

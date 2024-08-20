@@ -8,8 +8,10 @@ from django.conf import settings
 
 class ImageInline(admin.TabularInline):
     model = Image
-    extra = 1
-    readonly_fields = ('image_preview',)
+    extra = 2
+    list_display = ('property', 'image_preview', 'image_path', 'created_at', 'updated_at')
+    readonly_fields = ('image_preview', 'created_at', 'updated_at')
+    fields = ('image', 'image_preview', 'created_at', 'updated_at')
 
     def image_preview(self, instance):
         if instance.image:
@@ -85,7 +87,6 @@ class LocationAdmin(admin.ModelAdmin):
         }),
     )
 
-
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
     list_display = ('name','created_at', 'updated_at')
@@ -94,7 +95,7 @@ class AmenityAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('property', 'image_preview', 'image_path', 'created_at', 'updated_at')
+    list_display = ('property', 'image_preview', 'created_at', 'updated_at','image_path')
     search_fields = ('property__title',)
     list_filter = ('property', 'created_at')
     readonly_fields = ('image_preview', 'created_at', 'updated_at')

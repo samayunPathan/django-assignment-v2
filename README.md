@@ -72,7 +72,7 @@ This project is a Django application designed to store and manage property infor
 
 ## Installation Guide
 #### First go to scrapy project repo
-https://github.com/samayunPathan/Scrapy-assignment.git  
+https://github.com/samayunPathan/scrapy-assignment-w3.git 
 #### Download/clone this and  setup in your system , run scrapy project in your system its project path and database credentions required to that Django project. 
 
 
@@ -93,7 +93,7 @@ cd django-assignment-v2
 ```
 ### 3. Create a Virtual Environment
 ```bash
-python -m venv venv
+python3 -m venv venv # On Windows use `python -m venv venv`
 ```
 ```bash
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -121,7 +121,7 @@ port=5432
 dbname=scrapy_db
 user=your_db_user
 password=your_db_password
-scrapy_image_dir='your scrapy project downloaded images path'
+scrapy_image_dir=your scrapy project downloaded images path   *** place without any quotation
 ```
 - Update the Django settings.py to use the service name:
 ``` bash 

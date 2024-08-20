@@ -131,8 +131,7 @@ else:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 3600
 
-
-
+#Media settings
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

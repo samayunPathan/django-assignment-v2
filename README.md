@@ -88,6 +88,7 @@ Ensure you have Python and PostgreSQL installed on your machine.
 ```bash
 git clone https://github.com/samayunPathan/django-assignment-v2.git
 ```
+Go to project directory
 ``` bash
 cd django-assignment-v2
 ```
@@ -109,7 +110,7 @@ pip install -r requirements.txt
 [django_model_db]
 host=localhost
 port=5432
-dbname=scrapy_db
+dbname=django_db_name
 user=your_db_user
 password=your_db_password
 
@@ -118,7 +119,7 @@ password=your_db_password
 [scrapy_db] 
 host=localhost
 port=5432
-dbname=scrapy_db
+dbname=scrapy_db_name
 user=your_db_user
 password=your_db_password
 scrapy_image_dir=your scrapy project downloaded images path   *** place without any quotation

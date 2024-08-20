@@ -37,7 +37,7 @@ This project is a Django application designed to store and manage property infor
 ### 1. Create Django Models and Migrations
 
 - **Property Model**:
-  - `property_id`: Unique identifier for each property.
+  - `property_id`: Unique identifier for each property which from scrapy project property id.
   - `title`: Title of the property.
   - `description`: Detailed description of the property.
   - `images`: One-to-many relationship with the `Image` model.

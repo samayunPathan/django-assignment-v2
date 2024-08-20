@@ -105,7 +105,7 @@ pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
 - Set up your PostgreSQL database and user.
-- Create a .pg_service.conf file in your home directory with the following content:
+- Create `.pg_service.conf` file in your home directory with the following content:
 ```bash
 [django_model_db]
 host=localhost

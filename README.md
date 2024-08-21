@@ -19,8 +19,8 @@ This project is a Django application designed to store and manage property infor
   - [5. Configure PostgreSQL](#5-configure-postgresql)
   - [6. Apply Migrations](#6-apply-migrations)
   - [7. Create a Superuser](#7-create-a-superuser)
-  - [8. Run the Development Server](#8-run-the-development-server)
-  - [9. Migrate Data from Scrapy](#9-migrate-data-from-scrapy)
+  - [8. Migrate Data from Scrapy](#8-migrate-data-from-scrapy)
+  - [9. Run the Development Server](#9-run-the-development-server)
 - [Usage](#usage)
   
 ## Features
@@ -42,8 +42,6 @@ This project is a Django application designed to store and manage property infor
   - `description`: Detailed description of the property.
   - `images`: One-to-many relationship with the `Image` model.
   - `location`: Many-to-many relationship with the `Location` model.
-  - `latitude`: Latitude coordinate of the property.
-  - `longitude`: Longitude coordinate of the property.
   - `amenities`: Many-to-many relationship with the `Amenity` model.
   - `create_date`: Timestamp when the property record was created.
   - `update_date`: Timestamp when the property record was last updated.
@@ -53,12 +51,18 @@ This project is a Django application designed to store and manage property infor
   - `type`: Type of location (e.g., country, state, city).
   - `latitude`: Latitude of location.
   - `longitude`: Longitude of location.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 - **Amenity Model**:
   - `name`: Name of the amenity.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 - **Image Model**:
   - `image_path`: Path to the image file.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 ### 2. Use Django Admin with Proper Authentication
 
@@ -71,9 +75,13 @@ This project is a Django application designed to store and manage property infor
 
 
 ## Installation Guide
-#### First go to scrapy project repo
-https://github.com/samayunPathan/scrapy-assignment-w3.git 
-#### Download/clone this and  setup in your system , run scrapy project in your system its project path and database credentions required to that Django project. 
+
+**⚠️ Apology for the Inconvenience**
+
+I’ve updated the Scrapy project needed for my Django setup. Please download or clone the new Scrapy project from the link below and set it up on your system.
+
+🔗 [Scrapy Project Repository](https://github.com/samayunPathan/scrapy-assignment-w3.git)
+
 
 
 ### 1. Set Up the Environment
@@ -104,41 +112,35 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
-- Set up your PostgreSQL database and user.
-- Create `.pg_service.conf` file in your home directory with the following content:
+
+> [!NOTE]
+>  Create postgresql database.
+> Create `.pg_service.conf` file in your ** home directory with the following content:
+  
 ```bash
-[django_model_db]
+[django_db]
 host=localhost
-port=5432
-dbname=django_db_name
+port=port number
+dbname=your_django_db_name
 user=your_db_user
 password=your_db_password
 
-## Its scrapy_project database credentials
 
-[scrapy_db] 
+
+# Its scrapy database credentials.  *** which store data for scrapy project.
+
+[scrapy_db]
 host=localhost
-port=5432
-dbname=scrapy_db_name
+port=port number
+dbname=your_scrapy_db_name
 user=your_db_user
 password=your_db_password
-scrapy_image_dir=your scrapy project downloaded images path   *** place without any quotation
+
+[scrapy_settings]
+scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
+# example : scrapy_image_dir = /home/w3e63/Desktop/test/scrapy-assignment-w3/images
 ```
-- Update the Django settings.py to use the service name:
-``` bash 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'service': 'scrapy_db',
-        },
-    }
-}
-```
-- Update the `properties/management/commands/migrate_scrapy_data` to use the service name:
-``` bash 
-conn = psycopg2.connect(service='scrapy_db')
-```
+
 ### 6. Apply Migrations
 ``` bash
 python manage.py makemigrations
@@ -148,16 +150,16 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
-### 8. Run the Development Server
+
+### 8. Migrate Data from Scrapy
+```bash
+python manage.py migrate_scrapy_data
+```
+### 9. Run the Development Server
 ```bash 
 python manage.py runserver
 ```
 Access the Django admin panel at http://127.0.0.1:8000/admin/ and log in with your superuser credentials.
-
-### 9. Migrate Data from Scrapy
-```bash
-python manage.py migrate_scrapy_data
-```
 
 ## Usage
 - Manage properties, locations, amenities, and images through the Django admin interface.

@@ -105,7 +105,7 @@ pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
 - Create database.
-- Create `.pg_service.conf` file in your ** home directory with the following content:
+- Create `.pg_service.conf` file in your   ** home directory with the following content:
 ```bash
 [django_model_db]
 host=localhost
@@ -113,6 +113,7 @@ port=port number
 dbname=django_db_name
 user=your_db_user
 password=your_db_password
+
 
 ## *** Its scrapy_project database credentials
 
@@ -134,16 +135,16 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
-### 8. Run the Development Server
+
+### 8. Migrate Data from Scrapy
+```bash
+python manage.py migrate_scrapy_data
+```
+### 9. Run the Development Server
 ```bash 
 python manage.py runserver
 ```
 Access the Django admin panel at http://127.0.0.1:8000/admin/ and log in with your superuser credentials.
-
-### 9. Migrate Data from Scrapy
-```bash
-python manage.py migrate_scrapy_data
-```
 
 ## Usage
 - Manage properties, locations, amenities, and images through the Django admin interface.

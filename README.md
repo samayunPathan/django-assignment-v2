@@ -138,6 +138,7 @@ password=your_db_password
 
 [scrapy_settings]
 scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
+# example : scrapy_image_dir = /home/w3e63/Desktop/test/scrapy-assignment-w3/images
 ```
 
 ### 6. Apply Migrations

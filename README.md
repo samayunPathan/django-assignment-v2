@@ -108,6 +108,15 @@ pip install -r requirements.txt
 - Create `.pg_service.conf` file in your   ** home directory with the following content:
   
 ```bash
+[django_db]
+host=localhost
+port=port number
+dbname=your_django_db_name
+user=your_db_user
+password=your_db_password
+
+
+
 # Its scrapy database credentials.  *** which store data for scrapy project.
 
 [scrapy_db]
@@ -119,14 +128,6 @@ password=your_db_password
 
 [scrapy_settings]
  scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
- 
-[django_db]
-host=localhost
-port=port number
-dbname=your_django_db_name
-user=your_db_user
-password=your_db_password
-
 ```
 
 ### 6. Apply Migrations

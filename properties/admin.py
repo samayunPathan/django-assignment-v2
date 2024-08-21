@@ -145,7 +145,7 @@ class ImageInline(admin.TabularInline):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
-    list_display = ('title', 'description', 'display_locations', 'display_amenities', 'created_at', 'updated_at', 'image_preview')
+    list_display = ('property_id','title', 'description', 'display_locations', 'display_amenities', 'created_at', 'updated_at', 'image_preview')
     search_fields = ('title', 'description')
     filter_horizontal = ('locations', 'amenities')
     list_filter = ('created_at', 'updated_at', 'locations', 'amenities')
@@ -194,7 +194,7 @@ class PropertyAdmin(admin.ModelAdmin):
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('name', 'type', 'latitude', 'longitude', 'created_at', 'updated_at')
     search_fields = ('name',)
-    list_filter = ('type',)
+    list_filter = ('type','created_at', 'updated_at',)
     readonly_fields = ('created_at', 'updated_at')
 
     fieldsets = (
@@ -213,13 +213,14 @@ class LocationAdmin(admin.ModelAdmin):
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at', 'updated_at')
+    list_filter = ('name','created_at', 'updated_at')
     search_fields = ('name',)
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('property', 'image_preview', 'created_at', 'updated_at', 'image_path')
     search_fields = ('property__title',)
-    list_filter = ('property', 'created_at')
+    list_filter = ('property', 'created_at','updated_at')
     readonly_fields = ('image_preview', 'created_at', 'updated_at')
 
     fieldsets = (

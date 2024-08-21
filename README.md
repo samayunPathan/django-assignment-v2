@@ -19,8 +19,8 @@ This project is a Django application designed to store and manage property infor
   - [5. Configure PostgreSQL](#5-configure-postgresql)
   - [6. Apply Migrations](#6-apply-migrations)
   - [7. Create a Superuser](#7-create-a-superuser)
-  - [8. Run the Development Server](#8-run-the-development-server)
-  - [9. Migrate Data from Scrapy](#9-migrate-data-from-scrapy)
+  - [8. Migrate Data from Scrapy](#8-migrate-data-from-scrapy)
+  - [9. Run the Development Server](#9-run-the-development-server)
 - [Usage](#usage)
   
 ## Features
@@ -82,9 +82,6 @@ I’ve updated the Scrapy project needed for my Django setup. Please download or
 
 🔗 [Scrapy Project Repository](https://github.com/samayunPathan/scrapy-assignment-w3.git)
 
-Or 
-
-https://github.com/samayunPathan/scrapy-assignment-w3.git
 
 
 ### 1. Set Up the Environment
@@ -115,8 +112,10 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
-- Create postgresql database.
-- Create `.pg_service.conf` file in your   ** home directory with the following content:
+
+> [!NOTE]
+>  Create postgresql database.
+> Create `.pg_service.conf` file in your ** home directory with the following content:
   
 ```bash
 [django_db]
@@ -138,7 +137,7 @@ user=your_db_user
 password=your_db_password
 
 [scrapy_settings]
- scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
+scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
 ```
 
 ### 6. Apply Migrations

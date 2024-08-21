@@ -104,26 +104,29 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
-- Create database.
+- Create postgresql database.
 - Create `.pg_service.conf` file in your   ** home directory with the following content:
+  
 ```bash
-[django_model_db]
+# Its scrapy database credentials.  *** which store data for scrapy project.
+
+[scrapy_db]
 host=localhost
 port=port number
-dbname=django_db_name
+dbname=your_scrapy_db_name
 user=your_db_user
 password=your_db_password
 
-
-## *** Its scrapy_project database credentials
-
-[scrapy_db] 
+[scrapy_settings]
+ scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
+ 
+[django_db]
 host=localhost
 port=port number
-dbname=scrapy_db_name
+dbname=your_django_db_name
 user=your_db_user
 password=your_db_password
-scrapy_image_dir=your scrapy project downloaded images path   *** place without any quotation
+
 ```
 
 ### 6. Apply Migrations

@@ -104,41 +104,27 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 ### 5. Configure PostgreSQL
-- Set up your PostgreSQL database and user.
-- Create `.pg_service.conf` file in your home directory with the following content:
+- Create database.
+- Create `.pg_service.conf` file in your ** home directory with the following content:
 ```bash
 [django_model_db]
 host=localhost
-port=5432
+port=port number
 dbname=django_db_name
 user=your_db_user
 password=your_db_password
 
-## Its scrapy_project database credentials
+## *** Its scrapy_project database credentials
 
 [scrapy_db] 
 host=localhost
-port=5432
+port=port number
 dbname=scrapy_db_name
 user=your_db_user
 password=your_db_password
 scrapy_image_dir=your scrapy project downloaded images path   *** place without any quotation
 ```
-- Update the Django settings.py to use the service name:
-``` bash 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'service': 'scrapy_db',
-        },
-    }
-}
-```
-- Update the `properties/management/commands/migrate_scrapy_data` to use the service name:
-``` bash 
-conn = psycopg2.connect(service='scrapy_db')
-```
+
 ### 6. Apply Migrations
 ``` bash
 python manage.py makemigrations

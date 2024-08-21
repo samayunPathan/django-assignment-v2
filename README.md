@@ -42,8 +42,6 @@ This project is a Django application designed to store and manage property infor
   - `description`: Detailed description of the property.
   - `images`: One-to-many relationship with the `Image` model.
   - `location`: Many-to-many relationship with the `Location` model.
-  - `latitude`: Latitude coordinate of the property.
-  - `longitude`: Longitude coordinate of the property.
   - `amenities`: Many-to-many relationship with the `Amenity` model.
   - `create_date`: Timestamp when the property record was created.
   - `update_date`: Timestamp when the property record was last updated.
@@ -53,12 +51,18 @@ This project is a Django application designed to store and manage property infor
   - `type`: Type of location (e.g., country, state, city).
   - `latitude`: Latitude of location.
   - `longitude`: Longitude of location.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 - **Amenity Model**:
   - `name`: Name of the amenity.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 - **Image Model**:
   - `image_path`: Path to the image file.
+  - `create_date`: Timestamp when the property record was created.
+  - `update_date`: Timestamp when the property record was last updated.
 
 ### 2. Use Django Admin with Proper Authentication
 
@@ -71,9 +75,16 @@ This project is a Django application designed to store and manage property infor
 
 
 ## Installation Guide
-#### First go to scrapy project repo
-https://github.com/samayunPathan/scrapy-assignment-w3.git 
-#### Download/clone this and  setup in your system , run scrapy project in your system its project path and database credentions required to that Django project. 
+
+**⚠️ Apology for the Inconvenience**
+
+I’ve updated the Scrapy project needed for my Django setup. Please download or clone the new Scrapy project from the link below and set it up on your system.
+
+🔗 [Scrapy Project Repository](https://github.com/samayunPathan/scrapy-assignment-w3.git)
+
+Or 
+
+https://github.com/samayunPathan/scrapy-assignment-w3.git
 
 
 ### 1. Set Up the Environment

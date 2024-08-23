@@ -115,30 +115,26 @@ pip install -r requirements.txt
 
 > [!NOTE]
 >  Create postgresql database.
-> Create `.pg_service.conf` file in your ** home directory with the following content:
+> Create `.env` file in your ** project directory with the following content:
   
 ```bash
-[django_db]
 host=localhost
-port=port number
-dbname=your_django_db_name
-user=your_db_user
-password=your_db_password
-
-
+port_s=port
+dbname_s=db_name
+user_s=db_user
+password_s=db_password
 
 # Its scrapy database credentials.  *** which store data for scrapy project.
 
-[scrapy_db]
-host=localhost
-port=port number
-dbname=your_scrapy_db_name
-user=your_db_user
-password=your_db_password
+host_s=localhost
+port_s=port
+dbname_s=scrapy_db_name
+user_s=db_user
+password_s=db_password
 
-[scrapy_settings]
-scrapy_image_dir = your scrapy project downloaded images path  *** place path without any quotation.
-# example : scrapy_image_dir = /home/w3e63/Desktop/test/scrapy-assignment-w3/images
+
+# scrapy project downloaded images path 
+scrapy_image_dir = path      # scrapy_image_dir = 'F:\w3\LLM\scrapy-assignment-w3\images' ------- **** example 
 ```
 
 ### 6. Apply Migrations

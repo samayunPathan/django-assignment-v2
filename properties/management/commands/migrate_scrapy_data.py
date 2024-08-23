@@ -13,13 +13,19 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         # Load configuration
         config = configparser.ConfigParser()
-        config.read(os.path.expanduser('~/.pg_service.conf'))
+       
+        # Get the scrapy_image_dir from the environment variable
+        scrapy_image_dir = settings.SCRAPY_IMAGE_DIR
 
-        # Get the scrapy_image_dir from the config file
-        scrapy_image_dir = config.get('scrapy_settings', 'scrapy_image_dir', fallback='')
-
-        # Connect to the Scrapy PostgreSQL database
-        conn = psycopg2.connect(service='scrapy_db')
+        # Connect to the Scrapy PostgreSQL database using environment variables
+        conn = psycopg2.connect(
+            dbname=os.getenv('dbname_s'),
+            user=os.getenv('user_s'),
+            password=os.getenv('password_s'),
+            host=os.getenv('host_s'),
+            port=os.getenv('port_s')
+        )
+        
         cur = conn.cursor()
 
         # Fetch all hotels from Scrapy database

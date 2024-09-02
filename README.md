@@ -119,10 +119,10 @@ pip install -r requirements.txt
   
 ```bash
 host=localhost
-port_s=port
-dbname_s=db_name
-user_s=db_user
-password_s=db_password
+port=port
+dbname=db_name
+user=db_user
+password=db_password
 
 # Its scrapy database credentials.  *** which store data for scrapy project.
 
